@@ -6,7 +6,7 @@
 | W2 | Java Servlet | Thomas |
 | W3 | Spring Boot & Maven | 從缺 |
 | W4 | Spring Data - Dao & Entity | 從缺 |
-| W5 | Spring Framework - Service (AOP & transaction 控制) | 從缺 |
-| W6 | Spring MVC - Controller (Restful API)| 從缺 |
+| W5 | Spring AOP - Service & transaction 控制 | 從缺 |
+| W6 | Spring MVC - Controller & Restful API| 從缺 |
 | W7 | Javascript | David |
 | W8 | React | David |
