@@ -10,3 +10,7 @@
 | W6 | Spring MVC - Controller & Restful API| Rhys |
 | W7 | Javascript | David |
 | W8 | React | David |
+
+- 時間 - 每週三下午 1:30 ~ 5: (第一堂從 8/15 開始）
+- 地點 - 第一保: 台北市中正區延平南路189號7樓
+- 人數 - 約 8~9 人上課
