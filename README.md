@@ -2,8 +2,8 @@
 
 | Week | 課程 | 講師 | 
 |-----|-------|-----|
-| W1 | Java 環境安裝與基本語法介紹 | 從缺 |
-| W2 | Java Servlet | 從缺 |
+| W1 | Java 環境安裝與基本語法介紹 | Thomas |
+| W2 | Java Servlet | Thomas |
 | W3 | Spring Boot & Maven | 從缺 |
 | W4 | Spring Data - Dao & Entity | 從缺 |
 | W5 | Spring Framework - Service (AOP & transaction 控制) | 從缺 |
