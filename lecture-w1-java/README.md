@@ -1,10 +1,11 @@
 # java_training_firstins 第一保教育訓練
 - Week 1 Environment set up & Introduction for Java (2018/08/15)
- - jdk (Oracle)
+ - Environment
+  - jdk (Oracle)
     - http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
- - IDE(Eclipse)
+  - IDE(Eclipse)
     - https://www.eclipse.org/downloads/
- - lombok
+  - lombok
     - https://projectlombok.org/download
  
  - Process control I
@@ -13,3 +14,14 @@
     - while
     - do while
     - switch
+ - Process control II
+    - forEach
+    - map
+    - filter
+    - collect
+ - Inheritance
+    - extends, implements
+    - public, private, protected
+    - encapsulation, polymorphism
+    - override
+ - Annotation
