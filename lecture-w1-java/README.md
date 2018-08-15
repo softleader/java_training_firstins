@@ -21,7 +21,7 @@
     - do while
     - switch
  
- - [Process control II](#Process control II)
+ - [Process control II](#Process-control-II)
  - Inheritance
     - extends, implements
     - public, private, protected
@@ -32,7 +32,7 @@
     - Customized
     
     
-#Process control II
+#Process-control-II
     - forEach
     - map
     - filter
