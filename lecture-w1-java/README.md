@@ -26,3 +26,9 @@
 ## Deep into Java
 - Inheritance
 - Annotation
+
+## 參考書目  
+- [Java 7 教學手冊, 5/e](https://www.tenlong.com.tw/products/9789863120544)
+- [Java SE 8 技術手冊](https://www.tenlong.com.tw/products/9789863471714)
+- [深入淺出設計模式](https://www.tenlong.com.tw/products/9789867794529)
+- [無瑕的程式碼－敏捷軟體開發技巧守則](https://www.tenlong.com.tw/products/9789862017050)
