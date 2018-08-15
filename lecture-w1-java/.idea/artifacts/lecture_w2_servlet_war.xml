@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="lecture-w2-servlet:war">
-    <output-path>$PROJECT_DIR$/../lecture-w2-servlet/target</output-path>
-    <root id="archive" name="lecture-w2-servlet-0.0.1-SNAPSHOT.war">
-      <element id="artifact" artifact-name="lecture-w2-servlet:war exploded" />
-    </root>
-  </artifact>
-</component>
