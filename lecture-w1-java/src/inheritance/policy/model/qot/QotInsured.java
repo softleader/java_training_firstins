@@ -1,6 +1,6 @@
-package Inheritance.policy.model.qot;
+package inheritance.policy.model.qot;
 
-import Inheritance.policy.model.AbstractInsured;
+import inheritance.policy.model.AbstractInsured;
 import lombok.Getter;
 import lombok.Setter;
 

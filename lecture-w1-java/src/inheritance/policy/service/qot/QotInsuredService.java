@@ -1,7 +1,7 @@
-package Inheritance.policy.service.qot;
+package inheritance.policy.service.qot;
 
-import Inheritance.policy.model.qot.QotInsured;
-import Inheritance.policy.service.GenericInsuredService;
+import inheritance.policy.model.qot.QotInsured;
+import inheritance.policy.service.GenericInsuredService;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.function.Predicate;

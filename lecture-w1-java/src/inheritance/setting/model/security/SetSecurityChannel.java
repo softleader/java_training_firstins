@@ -1,6 +1,6 @@
-package Inheritance.setting.model.security;
+package inheritance.setting.model.security;
 
-import Inheritance.setting.model.AbstractSetting;
+import inheritance.setting.model.AbstractSetting;
 import lombok.Getter;
 import lombok.Setter;
 

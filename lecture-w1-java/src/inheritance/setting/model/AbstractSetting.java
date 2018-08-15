@@ -1,6 +1,6 @@
-package Inheritance.setting.model;
+package inheritance.setting.model;
 
-import Inheritance.common.model.AbstractModel;
+import inheritance.common.model.AbstractModel;
 import lombok.Getter;
 import lombok.Setter;
 

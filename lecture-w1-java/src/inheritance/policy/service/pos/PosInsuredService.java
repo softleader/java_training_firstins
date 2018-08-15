@@ -1,7 +1,6 @@
-package Inheritance.policy.service.pos;
+package inheritance.policy.service.pos;
 
-import Inheritance.policy.model.pos.PosInsured;
-import Inheritance.policy.service.GenericInsuredService;
+import inheritance.policy.model.pos.PosInsured;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.function.Predicate;

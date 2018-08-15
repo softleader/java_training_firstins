@@ -1,7 +1,7 @@
-package Inheritance;
+package inheritance;
 
-import Inheritance.policy.model.AbstractInsured;
-import Inheritance.policy.service.GenericInsuredService;
+import inheritance.policy.model.AbstractInsured;
+import inheritance.policy.service.GenericInsuredService;
 import com.google.inject.internal.util.Lists;
 import java.math.BigDecimal;
 import java.util.List;

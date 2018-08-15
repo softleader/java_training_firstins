@@ -1,6 +1,6 @@
-package Inheritance.policy.model;
+package inheritance.policy.model;
 
-import Inheritance.common.model.AbstractModel;
+import inheritance.common.model.AbstractModel;
 import java.math.BigDecimal;
 import lombok.Getter;
 import lombok.Setter;

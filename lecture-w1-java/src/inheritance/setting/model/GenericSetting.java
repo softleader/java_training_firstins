@@ -1,4 +1,4 @@
-package Inheritance.setting.model;
+package inheritance.setting.model;
 
 public interface GenericSetting {
 

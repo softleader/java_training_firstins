@@ -1,8 +1,8 @@
-package Inheritance.policy.service.qot.impl;
+package inheritance.policy.service.qot.impl;
 
-import Inheritance.policy.model.qot.QotInsured;
-import Inheritance.policy.service.AbstractInsuredService;
-import Inheritance.policy.service.qot.QotInsuredService;
+import inheritance.policy.model.qot.QotInsured;
+import inheritance.policy.service.AbstractInsuredService;
+import inheritance.policy.service.qot.QotInsuredService;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;

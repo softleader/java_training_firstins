@@ -1,4 +1,4 @@
-package Inheritance.common.model;
+package inheritance.common.model;
 
 import java.time.LocalDateTime;
 import lombok.Getter;

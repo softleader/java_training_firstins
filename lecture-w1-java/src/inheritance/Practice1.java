@@ -1,10 +1,9 @@
-package Inheritance;
+package inheritance;
 
-import Inheritance.policy.model.AbstractInsured;
-import Inheritance.policy.model.pos.PosInsured;
-import Inheritance.policy.model.qot.QotInsured;
-import Inheritance.policy.service.GenericInsuredService;
-import Inheritance.policy.service.qot.impl.QotInsuredServiceImpl;
+import inheritance.policy.model.AbstractInsured;
+import inheritance.policy.model.qot.QotInsured;
+import inheritance.policy.service.GenericInsuredService;
+import inheritance.policy.service.qot.impl.QotInsuredServiceImpl;
 import com.google.inject.internal.util.Lists;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
