@@ -14,13 +14,7 @@
       - class
     - Naming
       - Camel-Case
- - Process control I
-    - if else
-    - for
-    - while
-    - do while
-    - switch
- 
+ - [Process control I](#process-control-i)
  - [Process control II](#process-control-ii)
  - Inheritance
     - extends, implements
@@ -31,7 +25,12 @@
     - @Getter, @Setter
     - Customized
     
-
+### <a id="process-control-i"></a>Process control I
+    - if else
+    - for
+    - while
+    - do while
+    - switch
 ### <a id="process-control-ii"></a>Process control II
     - forEach
     - map
