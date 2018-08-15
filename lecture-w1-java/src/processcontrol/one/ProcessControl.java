@@ -12,6 +12,25 @@ public class ProcessControl {
     B,
     C,
   }
+  private static void switchPrinter(SwitchType k, String v) {
+    switch (k) {
+      case A:
+        System.out.printf("Team %s \t %s\n", k.name(), v);
+        break;
+      case B:
+        System.out.printf("Team %s \t %s\n", k.name(), v);
+        break;
+      case C:
+        System.out.printf("Team %s \t %s\n", k.name(), v);
+        break;
+      default:
+        System.out.printf("Team %s \t %s\n", k.name(), v);
+        break;
+
+    }
+  }
+
+
 
   public static void main(String[] args) {
 //		method1();
@@ -40,6 +59,9 @@ public class ProcessControl {
     // TODO extract local variable to parameter
 
   }
+
+
+
   // while
   private static void method3() {
     int i = 0;
@@ -49,6 +71,8 @@ public class ProcessControl {
       i++;
     }
   }
+
+
   // do...while...
   private static void method4() {
     int i = 0;
@@ -56,6 +80,9 @@ public class ProcessControl {
       // TODO
     } while (i < 100);
   }
+
+
+
   // 9X9(vertical)
   private static void method5() {
     for (int i = 0; i < 9; i++) {
@@ -64,6 +91,7 @@ public class ProcessControl {
       }
     }
   }
+
   // 9X9 (horizontal)
   private static void method6() {
     for (int i = 0; i < 9; i++) {
@@ -74,6 +102,10 @@ public class ProcessControl {
       // Hint: System.out.printf("\n");
     }
   }
+
+
+
+
   // Map & switch
   private static void method7() {
     LinkedHashMap<SwitchType, Object> m = Maps.newLinkedHashMap();
@@ -92,6 +124,7 @@ public class ProcessControl {
       switchPrinter(k, (String) v);
     });
   }
+
   // Entry & switch
   private static void method8() {
     Entry[] entries = {
@@ -114,23 +147,6 @@ public class ProcessControl {
   }
 
 
-  private static void switchPrinter(SwitchType k, String v) {
-    switch (k) {
-      case A:
-        System.out.printf("Team %s \t %s\n", k.name(), v);
-        break;
-      case B:
-        System.out.printf("Team %s \t %s\n", k.name(), v);
-        break;
-      case C:
-        System.out.printf("Team %s \t %s\n", k.name(), v);
-        break;
-      default:
-        System.out.printf("Team %s \t %s\n", k.name(), v);
-        break;
-
-    }
-  }
 
 
 
