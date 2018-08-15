@@ -1,6 +1,6 @@
 # Week 1 Environment set up & Introduction for Java (2018/08/15)
  - Environment
-    - [jdk (Oracle)](#http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+    - [jdk (Oracle)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
     - IDE(Eclipse)
      - https://www.eclipse.org/downloads/
     - lombok
