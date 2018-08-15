@@ -20,11 +20,8 @@
     - while
     - do while
     - switch
- - Process control II
-    - forEach
-    - map
-    - filter
-    - collect
+ 
+ - [Process control II](#Process control II)
  - Inheritance
     - extends, implements
     - public, private, protected
@@ -33,3 +30,11 @@
  - Annotation
     - @Getter, @Setter
     - Customized
+    
+    
+#Process control II
+    - forEach
+    - map
+    - filter
+    - collect
+
