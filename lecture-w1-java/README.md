@@ -31,10 +31,8 @@
     - @Getter, @Setter
     - Customized
     
-********
-process-control-ii
-********
-Process control II
+
+process control ii
     - forEach
     - map
     - filter
