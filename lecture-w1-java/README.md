@@ -7,17 +7,11 @@
     - lombok
      - https://projectlombok.org/download
  
- - [Introduction](@introduction)    
+ - [Introduction](#introduction)    
  - [Process control I](#process-control-i)
  - [Process control II](#process-control-ii)
- - Inheritance
-    - extends, implements
-    - public, private, protected
-    - encapsulation, polymorphism
-    - override
- - Annotation
-    - @Getter, @Setter
-    - Customized
+ - [Inheritance](#inheritance)
+ - [Annotation](#annotation)
 
 ### <a id="introduction"></a>Introduction
     - Composition of class
@@ -37,4 +31,11 @@
     - map
     - filter
     - collect
-
+### <a id="inheritance"></a>Inheritance
+    - extends, implements
+    - public, private, protected
+    - encapsulation, polymorphism
+    - override
+### <a id="annotation"></a>Annotation
+    - @Getter, @Setter
+    - Customized
