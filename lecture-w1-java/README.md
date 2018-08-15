@@ -32,3 +32,5 @@
     - encapsulation, polymorphism
     - override
  - Annotation
+    - @Getter, @Setter
+    - Customized
