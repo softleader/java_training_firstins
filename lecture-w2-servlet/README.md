@@ -82,7 +82,7 @@ CustomizedStreamLikeTypeImpl
 - 流程與邏輯切割分明: 可讀性、維護
 ### Java8如何解決? 增加型態? 
 - Java 8 沒有加入新的函式型態
-- 取而代之的是而是使用[抽象方法介面](何謂抽象方法介面(functional-interface)?)
+- 取而代之的是而是使用[抽象方法介面](何謂抽象方法介面functional-interface)
 - 預設實作、預設方法(Default methods)
 
 ### 何謂抽象方法介面(Functional Interface)?
