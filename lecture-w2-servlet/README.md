@@ -1,5 +1,5 @@
 # Week 2 Introduction for Java8 Lambda and Java Servlet (2018/08/22)
-## Lambda
+
 ### Lambda關心什麼？ 不關心什麼？
 ```
 f(x) = x * 3
