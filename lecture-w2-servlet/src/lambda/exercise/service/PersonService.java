@@ -1,4 +1,4 @@
-package lambda.exercise;
+package lambda.exercise.service;
 
 import java.math.BigDecimal;
 import java.util.List;
