@@ -1,4 +1,4 @@
-package lambda;
+package lambda.customized;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -9,7 +9,6 @@ import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
-import java.util.stream.Stream;
 
 public class ExampleCollector {
 	
