@@ -47,7 +47,20 @@ true   value -> true
 - 更抽象, 更共用
 - 更專注於商業邏輯
 - 更具可讀性(管線操作風格)
-- 更有效率
+### 簡化匿名類別的實作
+-  使用匿名類別
+```java
+Collections.sort(students, new Comparator<Student>() {
+	@Override
+	public int compare(Student o1, Student o2) {
+		return Integer.compare(o1.getAge(), o2.getAge());
+	}
+});
+```
+- 使用Lambda
+```java
+Collections.sort(students, Comparator.comparing(student -> student.getAge()));
+```
 ### 何謂管線操作風格?
 - 非管線式
 ```java
@@ -63,12 +76,15 @@ CustomizedStreamLikeTypeImpl
 .map(mapper)
 .get()
 ```
-- 中介操作(Intermediate operation/Aggregate operation)
-- 最終操作(Terminal operation)
 
+### 管線化的好處
+- 商業邏輯單元化: 測試、重組
+- 流程與邏輯切割分明: 可讀性、維護
 ### Java8如何解決? 增加型態? 
 - Java 8 沒有加入新的函式型態
-- 取而代之的是而是使用抽象方法介面
+- 取而代之的是而是使用[抽象方法介面](何謂抽象方法介面(functionalinterface)?)
+- 預設實作、預設方法(Default methods)
+
 ### 何謂抽象方法介面(Functional Interface)?
 - 只有一個抽象方法的介面
 - @FunctionalInterface
@@ -83,7 +99,34 @@ public interface Runnable {
 }
 ```
 ### 閱讀API前必須知道的四大介面
-- Supplier
-- Consumer
-- Function
-- Predicate
+- java.util.function.Function
+  - input 轉變成 output
+- java.util.function.Predicate
+  - input 轉變成 boolean
+- java.util.function.Consumer
+  - 有input, 沒有output
+- java.util.function.Supplier
+  - 沒有input, 有output
+### Stream怎麼用? java.util.stream.Stream
+- 中介操作(Intermediate operation/Aggregate operation)
+- 最終操作(Terminal operation)
+
+| 方法名稱  | 描述         | 類型         |
+|-----------|--------------|--------------|
+| filter    | 過濾         | intermediate |
+| map       | 轉型         | intermediate |
+| flatMap   | 轉型         | intermediate |
+| distinct  | 篩選出不重複 | intermediate |
+| sorted    | 排序         | intermediate |
+| forEach   | 列舉         | terminal     |
+| reduce    | 壓縮         | terminal     |
+| min       | 取最小       | terminal     |
+| max       | 取最大       | terminal     |
+| anyMatch  | 任一符合     | terminal     |
+| allMatch  | 全部符合     | terminal     |
+| findFirst | 取第一筆     | terminal     |
+| collect   | 收集         | terminal     |
+
+
+### 處理null的好幫手 Optional
+
