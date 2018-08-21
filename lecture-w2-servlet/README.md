@@ -16,7 +16,6 @@ x -> x * 3
 ### 函數式程式設計有什麼好處？
 - 更抽象、更共用(待會開始動手做時會演練)
 - [簡化匿名類別的實作](#簡化匿名類別的實作)、更專注於商業邏輯(對呼叫方method命名很重要) 
-- 更具可讀性([Pipeline風格](#何謂pipeline風格))
 
 ### 何謂Functional Interface?
 - 只有一個抽象方法的介面
@@ -32,7 +31,9 @@ public interface Runnable {
 }
 ```
 
+
 ### JDK8 Functional API
+- [實現Pipeline風格](#何謂pipeline風格)
 - [閱讀API前必須知道的四大介面](#閱讀api前必須知道的四大介面)
 - [誰可以使用Stream?](#誰可以使用stream)
 - [Stream怎麼用?](stream怎麼用-java.util.stream.stream)
@@ -131,6 +132,7 @@ CustomizedStreamLikeTypeImpl
   - 有input, 沒有output
 - [java.util.function.Supplier](https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html)
   - 沒有input, 有output
+- 比較「實作匿名類別」與「以Lambda語法實作」的差異  
 
 ### 處理null的好幫手 Optional
  - 建立方法 of(), ofNullable()
