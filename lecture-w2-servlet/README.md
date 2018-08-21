@@ -125,14 +125,18 @@ CustomizedStreamLikeTypeImpl
 
 ### 閱讀API前必須知道的四大介面
 - [java.util.function.Function](https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html)
-  - input 轉變成 output
+  - input 轉變成 output 一般用於資料轉換
 - [java.util.function.Predicate](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html)
-  - input 轉變成 boolean
+  - input 轉變成 boolean 一般用於過濾資料
 - [java.util.function.Consumer](https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html)
-  - 有input, 沒有output
+  - 有input, 沒有output 一般用於顯示資料或者執行任務後不需再回傳的情境
 - [java.util.function.Supplier](https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html)
-  - 沒有input, 有output
+  - 沒有input, 有output 一般用於getter
 - 比較「實作匿名類別」與「以Lambda語法實作」的差異  
+
+### Stream 的 reduce 與 collect
+- reduce 壓縮資料 一般用於加總
+- collect 收集資料 一般會需呼叫Collectors現有的靜態方法(Ex: groupingBy, toList, toMap, ...)
 
 ### 處理null的好幫手 Optional
  - 建立方法 of(), ofNullable()
