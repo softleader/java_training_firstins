@@ -1,108 +1,24 @@
 # Week 2 Introduction for Java8 Lambda and Java Servlet (2018/08/22)
 
-### Lambda關心什麼？ 不關心什麼？
-```
-f(x) = x * 3
+### Lambda 長什麼樣子? 它關心什麼？ 不關心什麼？
+```java
+public int f(int x) {
+    return x * 3;
+}
+
 x -> x * 3
 ```
-- 不關心函式介面的名稱
+- 不關心[Functional Interface](#何謂functional-interface)的名稱
 - 不關心目標型態 (因為有型別推斷)
-- 不關心方法名稱 (Lambda運算式是匿名方法)
-- 只關心方法的簽署(signature) (Lambda運算式的本體就是函式介面的方法實作)
+- 不關心方法名稱 (實作方的角度)
+- 只關心方法的實作
 
 ### 函數式程式設計有什麼好處？
-- 更抽象([基本的Lambda演算](#基本的lambda演算))、更共用
-- [簡化匿名類別的實作](#簡化匿名類別的實作)、更專注於商業邏輯 
-- 更具可讀性([管線操作風格](#何謂管線操作風格))
+- 更抽象、更共用(待會開始動手做時會演練)
+- [簡化匿名類別的實作](#簡化匿名類別的實作)、更專注於商業邏輯(呼叫方只需從方法命名即可掌握該流程) 
 
-### 不是函數式語言 Java8如何引入? 增加型態? 
-- Java 8 沒有加入新的函式型態
-- 取而代之的是而是使用[抽象方法介面](#何謂抽象方法介面functional-interface)
-- 預設實作、預設方法(Default methods)
-- 使用Stream API:[閱讀API前必須知道的四大介面](#閱讀api前必須知道的四大介面)、[誰可以使用Stream?](#誰可以使用stream)、[Stream怎麼用?](stream怎麼用-java.util.stream.stream)
-
-
-### 處理null的好幫手 Optional
-
-
-
-
-* * *
-
-## Lambda
-### 基本的Lambda演算
-```java
-// not 可以用Lambda表示為
-false -> true
-true  -> false
-// and 可以用Lambda表示為
-value false -> false
-value true   -> value
-false  value -> false
-true   value -> value
-// or 可以用Lambda表示為
-value false -> value
-value true   -> true
-false  value -> value
-true   value -> true
-// If 可以用Lambda表示為
- condition -> trueValue -> falseValue -> 
-(condition and trueValue) or (not condition and falseValue)
-// 若condition為true
-(true      and trueValue) or (not condition and falseValue)
-(trueValue) or (not condition and falseValue)
-(trueValue) or (false         and falseValue)
-(trueValue) or (false                       )
-(trueValue)
-// 若condition為false
-(false and trueValue) or (not condition and falseValue)
-(false              ) or (not condition and falseValue)
-                         (not condition and falseValue)
-                         (not false     and falseValue)
-                         (true          and falseValue)
-                         (                  falseValue)
- 
-```
-
-### 簡化匿名類別的實作
--  使用匿名類別
-```java
-Collections.sort(students, new Comparator<Student>() {
-	@Override
-	public int compare(Student o1, Student o2) {
-		return Integer.compare(o1.getAge(), o2.getAge());
-	}
-});
-```
-- 使用Lambda
-```java
-Collections.sort(students, Comparator.comparing(student -> student.getAge()));
-```
-
-
-
-
-### 何謂管線操作風格?
-- 非管線式
-```java
-CustomizedHelperLikeType.map(
-CustomizedHelperLikeType.filter(
-CustomizedHelperLikeType.list(1, 2, 3), condition), mapper);
-```
-- 管線式
-```java
-CustomizedStreamLikeTypeImpl
-.of(1, 2, 3)
-.filter(condition)
-.map(mapper)
-.get()
-```
-### 管線化的好處
-- 商業邏輯單元化: 測試、重組
-- 流程與邏輯切割分明: 可讀性、維護
-
-### 何謂抽象方法介面(Functional Interface)?
-- 只有一個抽象方法的介面
+### 何謂Functional Interface?
+- 恰/只有一個抽象方法的介面
 - @FunctionalInterface
 ```java
 @FunctionalInterface
@@ -114,6 +30,67 @@ public interface Runnable {
     public abstract void run();
 }
 ```
+
+
+### JDK8 Functional API
+- [實現Pipeline風格](#何謂pipeline風格)
+- [閱讀API前必須知道的四大介面](#閱讀api前必須知道的四大介面)
+- [誰可以使用Stream?](#誰可以使用stream)
+- [Stream怎麼用?](stream怎麼用-java.util.stream.stream)
+- [Stream 的 reduce 與 collect]()
+- [處理null的好幫手 Optional](#處理null的好幫手-optional)
+
+
+ 
+### 課後練習
+- [試著使用Stream與Lambda語法實作商業邏輯](#試著使用stream與lambda語法實作商業邏輯)
+
+* * *
+* * *
+
+## Lambda
+
+
+### 簡化匿名類別的實作
+-  使用匿名類別
+```java
+Collections.sort(students, new Comparator<Student>() {
+	@Override
+	public int compare(Student student1, Student student2) {
+		return student1.getAge() - student2.getAge();
+	}
+});
+```
+- 使用Lambda
+```java
+Collections.sort(students, (student1, student2) -> student1.getAge() - student2.getAge()));
+```
+
+
+
+
+### 何謂Pipeline風格?
+- 非Pipeline
+```java
+CustomizedHelperLikeType.map(
+	CustomizedHelperLikeType.filter(
+		CustomizedHelperLikeType.of(1, 2, 3)
+	, condition)
+, mapper);
+```
+- Pipeline
+```java
+CustomizedStreamLikeTypeImpl
+.of(1, 2, 3)
+.filter(condition)
+.map(mapper)
+.get()
+```
+### Pipeline化的好處
+- 商業邏輯單元化: 測試、重組
+- 流程與邏輯切割分明: 可讀性、維護
+
+
 * * *
 
 ## Stream
@@ -147,14 +124,28 @@ public interface Runnable {
 
 
 ### 閱讀API前必須知道的四大介面
-- java.util.function.Function
-  - input 轉變成 output
-- java.util.function.Predicate
-  - input 轉變成 boolean
-- java.util.function.Consumer
-  - 有input, 沒有output
-- java.util.function.Supplier
-  - 沒有input, 有output
+- [java.util.function.Function](https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html)
+  - input 轉變成 output 一般用於資料轉換
+- [java.util.function.Predicate](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html)
+  - input 轉變成 boolean 一般用於過濾資料
+- [java.util.function.Consumer](https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html)
+  - 有input, 沒有output 一般用於顯示資料或者執行任務後不需再回傳的情境
+- [java.util.function.Supplier](https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html)
+  - 沒有input, 有output 一般用於getter
+- 比較「實作匿名類別」與「以Lambda語法實作」的差異  
 
+### Stream 的 reduce 與 collect
+- reduce 壓縮資料 一般用於加總
+- collect 收集資料 一般會需呼叫Collectors現有的靜態方法(Ex: groupingBy, toList, toMap, ...)
+
+### 處理null的好幫手 Optional
+ - 建立方法 of(), ofNullable()
+ - 使用方法 orElse(), orElseGet(), orElseThrow()
+ - 比較差異 orElse(), orElseGet()
 * * *
-## Stream 與 Lambda
+
+### 課後練習
+### 試著使用Stream與Lambda語法實作商業邏輯
+- 執行進入點 lambda.exercise.HumanResourceExecutor
+- 商業邏輯   lambda.exercise.service.PersonService
+- 資料物件   lambda.exercise.model.Person
