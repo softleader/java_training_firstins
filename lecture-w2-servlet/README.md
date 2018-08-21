@@ -1,19 +1,22 @@
 # Week 2 Introduction for Java8 Lambda and Java Servlet (2018/08/22)
 
 ### Lambda 長什麼樣子? 它關心什麼？ 不關心什麼？
-```javascript
-f(x) = x * 3
+```java
+public int f(x) {
+    return x * 3;
+}
+
 x -> x * 3
 ```
 - 不關心函式介面的名稱
 - 不關心目標型態 (因為有型別推斷)
-- 不關心方法名稱 (Lambda運算式是匿名方法)
+- 不關心方法名稱 (實作方的角度Lambda運算式是匿名方法)
 - 只關心方法的簽署(signature) (Lambda運算式的本體就是函式介面的方法實作)
 
 ### 函數式程式設計有什麼好處？
-- 更抽象([基本的Lambda演算](#基本的lambda演算))、更共用(待會開始動手做時會演練)
-- [簡化匿名類別的實作](#簡化匿名類別的實作)、更專注於商業邏輯(method命名很重要) 
-- 更具可讀性([管線操作風格](#何謂管線操作風格))
+- 更抽象、更共用(待會開始動手做時會演練)
+- [簡化匿名類別的實作](#簡化匿名類別的實作)、更專注於商業邏輯(對呼叫方method命名很重要) 
+- 更具可讀性([Pipeline風格](#何謂ipeline風格))
 
 ### 不是函數式語言 Java8如何引入? 增加型態? 
 - Java 8 沒有加入新的函式型態
@@ -33,39 +36,7 @@ x -> x * 3
 * * *
 
 ## Lambda
-### 基本的Lambda演算
-```java
-// not 可以用Lambda表示為
-false -> true
-true  -> false
-// and 可以用Lambda表示為
-value false -> false
-value true   -> value
-false  value -> false
-true   value -> value
-// or 可以用Lambda表示為
-value false -> value
-value true   -> true
-false  value -> value
-true   value -> true
-// If 可以用Lambda表示為
- condition -> trueValue -> falseValue -> 
-(condition and trueValue) or (not condition and falseValue)
-// 若condition為true
-(true      and trueValue) or (not condition and falseValue)
-(trueValue) or (not condition and falseValue)
-(trueValue) or (false         and falseValue)
-(trueValue) or (false                       )
-(trueValue)
-// 若condition為false
-(false and trueValue) or (not condition and falseValue)
-(false              ) or (not condition and falseValue)
-                         (not condition and falseValue)
-                         (not false     and falseValue)
-                         (true          and falseValue)
-                         (                  falseValue)
- 
-```
+
 
 ### 簡化匿名類別的實作
 -  使用匿名類別
@@ -85,14 +56,14 @@ Collections.sort(students, Comparator.comparing(student -> student.getAge()));
 
 
 
-### 何謂管線操作風格?
+### 何謂Pipeline風格?
 - 非管線式
 ```java
 CustomizedHelperLikeType.map(
 CustomizedHelperLikeType.filter(
 CustomizedHelperLikeType.list(1, 2, 3), condition), mapper);
 ```
-- 管線式
+- Pipeline
 ```java
 CustomizedStreamLikeTypeImpl
 .of(1, 2, 3)
@@ -100,7 +71,7 @@ CustomizedStreamLikeTypeImpl
 .map(mapper)
 .get()
 ```
-### 管線化的好處
+### Pipeline化的好處
 - 商業邏輯單元化: 測試、重組
 - 流程與邏輯切割分明: 可讀性、維護
 
