@@ -41,7 +41,7 @@ public interface Runnable {
 
 
  
-### [試著使用Stream與Lambda語法實作商業邏輯](#課後練習)
+### [課後練習](#試著使用Stream與Lambda語法實作商業邏輯)
 
 * * *
 * * *
@@ -136,9 +136,9 @@ CustomizedStreamLikeTypeImpl
  - 使用方法 orElse(), orElseGet(), orElseThrow()
  - 比較差異 orElse(), orElseGet()
 * * *
-## Stream 與 Lambda
+### 課後練習Stream 與 Lambda
 
-### 課後練習
+### 試著使用Stream與Lambda語法實作商業邏輯
 - 執行進入點 lambda.exercise.HumanResourceExecutor
 - 商業邏輯   lambda.exercise.service.PersonService
 - 資料物件   lambda.exercise.model.Person
