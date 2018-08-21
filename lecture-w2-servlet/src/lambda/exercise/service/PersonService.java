@@ -1,6 +1,6 @@
 package lambda.exercise.service;
 
-import java.math.BigDecimal;
+import com.google.inject.internal.util.Lists;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -8,7 +8,6 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import lambda.exercise.builder.PersonBuilder;
 import lambda.exercise.enums.Gender;
 import lambda.exercise.enums.Relation;
 import lambda.exercise.model.Person;
@@ -62,7 +61,7 @@ public class PersonService {
    */
 
 
-  public List<Person> getByWorkHourOver(BigDecimal workHour) {
+  public List<Person> getByWorkHourOver(int workHour) {
     // TODO
     // 1.取出全部
     // 2.過濾
@@ -95,98 +94,92 @@ public class PersonService {
     return null;
   }
 
+  /**
+   * 情境：父親節寄賀卡, 需要找出所有人的父親們.
+   * 又出現重複的邏輯了！ 只要再加上一點新判斷就能組成新的商業邏輯
+   * 雖然可以直接呼叫{@link #getAllParent()} 之後再過濾, 不過代價是相依性增加(若getAllParent變動, 則所有相依的邏輯也跟著變動)
+   * 比較好的做法是把邏輯包裝在每個方法中, 抽出的邏輯必須是真的可以被共用的.
+   * @return
+   */
+  public List<Person> getAllFather() {
+    // TODO
+    // 1.取出全部
+    // 2.過濾
+    // 3.收集
+    return null;
+  }
 
-public List<Person> getAll() {
+  public List<Person> getAllMother() {
+    // TODO
+    // 1.取出全部
+    // 2.過濾
+    // 3.收集
+    return null;
+  }
 
-  Person p1 = new PersonBuilder().name("Matt").empNo(1).gender(Gender.MALE)
-      .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-      .parent(
-          new PersonBuilder().name("Matt's Father").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.FATHER).build(),
-          new PersonBuilder().name("Matt's Mother").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.MOTHER).build()
-      )
-      .build();
-  Person p2 = new PersonBuilder().name("David").empNo(2).gender(Gender.MALE)
-      .wageRate(BigDecimal.valueOf(999)).workHour(BigDecimal.valueOf(9))
-      .parent(
-          new PersonBuilder().name("David's Father").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.FATHER).build(),
-          new PersonBuilder().name("David's Mother").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.MOTHER).build()
-      )
-      .build();
-  Person p3 = new PersonBuilder().name("Rhys").empNo(3).gender(Gender.MALE)
-      .wageRate(BigDecimal.valueOf(998)).workHour(BigDecimal.valueOf(10))
-      .parent(
-          new PersonBuilder().name("Rhys' Father").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.FATHER).build(),
-          new PersonBuilder().name("Rhys' Mother").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.MOTHER).build()
-      )
-      .build();
-  Person p4 = new PersonBuilder().name("Thomas").empNo(4).gender(Gender.MALE)
-      .wageRate(BigDecimal.valueOf(997)).workHour(BigDecimal.valueOf(11))
-      .parent(
-          new PersonBuilder().name("Thomas's Father").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.FATHER).build(),
-          new PersonBuilder().name("Thomas's Mother").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.MOTHER).build()
-      )
-      .build();
-  Person p5 = new PersonBuilder().name("Meta").empNo(5).gender(Gender.FEMALE)
-      .wageRate(BigDecimal.valueOf(996)).workHour(BigDecimal.valueOf(8))
-      .parent(
-          new PersonBuilder().name("Meta's Father").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.FATHER).build(),
-          new PersonBuilder().name("Meta's Mother").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.MOTHER).build()
-      )
-      .build();
-  Person p6 = new PersonBuilder().name("Sophie").empNo(6).gender(Gender.FEMALE)
-      .wageRate(BigDecimal.valueOf(995)).workHour(BigDecimal.valueOf(9))
-      .parent(
-          new PersonBuilder().name("Sophie's Father").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.FATHER).build(),
-          new PersonBuilder().name("Sophie's Mother").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.MOTHER).build()
-      )
-      .build();
-  Person p7 = new PersonBuilder().name("Sunny").empNo(7).gender(Gender.FEMALE)
-      .wageRate(BigDecimal.valueOf(994)).workHour(BigDecimal.valueOf(10))
-      .parent(
-          new PersonBuilder().name("Sunny's Father").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.FATHER).build(),
-          new PersonBuilder().name("Sunny's Mother").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.MOTHER).build()
-      )
-      .build();
-  Person p8 = new PersonBuilder().name("Cathy").empNo(8).gender(Gender.FEMALE)
-      .wageRate(BigDecimal.valueOf(993)).workHour(BigDecimal.valueOf(11))
-      .parent(
-          new PersonBuilder().name("Cathy's Father").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.FATHER).build(),
-          new PersonBuilder().name("Cathy's Mother").empNo(1).gender(Gender.MALE)
-              .wageRate(BigDecimal.valueOf(1000)).workHour(BigDecimal.valueOf(8))
-              .relation(Relation.MOTHER).build()
-      )
-      .build();
-  return Stream.of(p1, p2, p3, p4, p5, p6, p7, p8).collect(Collectors.toList());
+  /**
+   * 找出夠「富裕」的母親
+   * 「富裕」的定義
+   *  1. 個人的所得
+   * @return
+   */
+  public List<Person> getAllWealthyMother(double income) {
+    // TODO
+    // 1.取出全部
+    // 2.過濾
+    // 3.收集
+
+    return null;
+  }
+
+  /**
+   *
+   * 找出夠「富裕」的母親
+   * 「富裕」的定義
+   *  1. 個人的所得
+   *  2. 整戶的所得
+   *  3. 先整戶所得, 其餘者再個人所得
+   *  依據整戶總所得超過門檻A的家庭分成兩組
+   *  針對戶所得較高的群組 取出
+   *  針對戶所得較低的群組 再次過濾個人所得高於某門檻B
+   *
+   *
+   *
+   * @return
+   */
+  public List<Person> getAllWealthyMother() {
+    // TODO
+    // 1.取出全部
+    // 2.過濾(使用 or方法)
+    // 3.收集
+
+    return null;
+  }
+
+
+  public List<Person> getAll() {
+
+   Person matt = new Person("Matt", 1, Gender.MALE, Relation.SELF, 1000, 8, Lists.newArrayList(
+       new Person("Matt's Dad", 0, Gender.MALE, Relation.FATHER, 1000, 8, Lists.newArrayList(), 8000),
+       new Person("Matt's Mom", 0, Gender.FEMALE, Relation.MOTHER, 1000, 8, Lists.newArrayList(), 8000)
+   ), 8000);
+   Person david = new Person("David", 1, Gender.MALE, Relation.SELF, 1000, 8, Lists.newArrayList(
+       new Person("David's Dad", 0, Gender.MALE, Relation.FATHER, 1000, 8, Lists.newArrayList(), 8000),
+       new Person("David's Mom", 0, Gender.FEMALE, Relation.MOTHER, 1000, 8, Lists.newArrayList(), 8000)
+   ), 8000);
+    Person rhys = new Person("Rhys", 1, Gender.MALE, Relation.SELF, 1000, 8, Lists.newArrayList(
+       new Person("Rhys's Dad", 0, Gender.MALE, Relation.FATHER, 1000, 8, Lists.newArrayList(), 8000),
+       new Person("Rhys's Mom", 0, Gender.FEMALE, Relation.MOTHER, 1000, 8, Lists.newArrayList(), 8000)
+   ), 8000);
+    Person thomas = new Person("Thomas", 1, Gender.MALE, Relation.SELF, 1000, 8, Lists.newArrayList(
+       new Person("Thomas's Dad", 0, Gender.MALE, Relation.FATHER, 1000, 8, Lists.newArrayList(), 8000),
+       new Person("Thomas's Mom", 0, Gender.FEMALE, Relation.MOTHER, 1000, 8, Lists.newArrayList(), 8000)
+   ), 8000);
+
+
+
+   return Lists.newArrayList(matt, david, rhys, thomas);
+
 
 }
 }
