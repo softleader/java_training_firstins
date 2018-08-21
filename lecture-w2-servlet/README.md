@@ -8,17 +8,17 @@ public int f(int x) {
 
 x -> x * 3
 ```
-- 不關心函式介面的名稱
+- 不關心[Functional Interface](#何謂functional-interface)的名稱
 - 不關心目標型態 (因為有型別推斷)
 - 不關心方法名稱 (實作方的角度)
 - 只關心方法的實作
 
 ### 函數式程式設計有什麼好處？
 - 更抽象、更共用(待會開始動手做時會演練)
-- [簡化匿名類別的實作](#簡化匿名類別的實作)、更專注於商業邏輯(對呼叫方method命名很重要) 
+- [簡化匿名類別的實作](#簡化匿名類別的實作)、更專注於商業邏輯(呼叫方只需從方法命名即可掌握該流程) 
 
 ### 何謂Functional Interface?
-- 只有一個抽象方法的介面
+- 恰/只有一個抽象方法的介面
 - @FunctionalInterface
 ```java
 @FunctionalInterface
