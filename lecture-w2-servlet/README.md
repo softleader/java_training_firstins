@@ -138,7 +138,7 @@ CustomizedStreamLikeTypeImpl
 * * *
 ## Stream 與 Lambda
 
-### 課後練習 
+### 課後練習
 - 執行進入點 lambda.exercise.HumanResourceExecutor
 - 商業邏輯   lambda.exercise.service.PersonService
 - 資料物件   lambda.exercise.model.Person
