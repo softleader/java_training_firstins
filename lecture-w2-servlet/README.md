@@ -41,7 +41,7 @@ public interface Runnable {
 
 
  
-### [課後練習](#課後練習)
+### [試著使用Stream與Lambda語法實作商業邏輯](#課後練習)
 
 * * *
 * * *
