@@ -2,7 +2,7 @@
 
 ### Lambda 長什麼樣子? 它關心什麼？ 不關心什麼？
 ```java
-public int f(x) {
+public int f(int x) {
     return x * 3;
 }
 
@@ -10,18 +10,19 @@ x -> x * 3
 ```
 - 不關心函式介面的名稱
 - 不關心目標型態 (因為有型別推斷)
-- 不關心方法名稱 (實作方的角度Lambda運算式是匿名方法)
-- 只關心方法的簽署(signature) (Lambda運算式的本體就是函式介面的方法實作)
+- 不關心方法名稱 (實作方的角度)
+- 只關心方法的實作
 
 ### 函數式程式設計有什麼好處？
 - 更抽象、更共用(待會開始動手做時會演練)
 - [簡化匿名類別的實作](#簡化匿名類別的實作)、更專注於商業邏輯(對呼叫方method命名很重要) 
 - 更具可讀性([Pipeline風格](#何謂pipeline風格))
 
-### 不是函數式語言 Java8如何引入? 增加型態? 
-- Java 8 沒有加入新的函式型態
+### 不是函數式語言 Java8如何引入? 增加型態? 翻修現有API ?
+- Java 8 沒有加入新的函式型態, 也沒有翻修現有的API(ex: Collection2)
 - 取而代之的是而是使用[Functional Interface](#何謂functional-interface) *型別推斷*
-- 預設實作、預設方法(Default methods) *andThen()*
+- 以及預設實作、預設方法(Default methods) *andThen()*
+  - 你能想像在現有ArrayList裡面增加static methods嗎?
 
 
 
@@ -32,10 +33,7 @@ x -> x * 3
 - [Stream怎麼用?](stream怎麼用-java.util.stream.stream)
 - [處理null的好幫手 Optional](#處理null的好幫手-optional)
 
-### 處理null的好幫手 Optional
- - 建立方法 of(), ofNullable()
- - 使用方法 orElse(), orElseGet(), orElseThrow()
- - 比較差異 orElse(), orElseGet()
+
  
 ### Stream 與 Lambda
  - [直接打開Eclipse看程式吧](#直接打開eclipse看程式吧)
@@ -137,6 +135,10 @@ public interface Runnable {
 - [java.util.function.Supplier](https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html)
   - 沒有input, 有output
 
+### 處理null的好幫手 Optional
+ - 建立方法 of(), ofNullable()
+ - 使用方法 orElse(), orElseGet(), orElseThrow()
+ - 比較差異 orElse(), orElseGet()
 * * *
 ## Stream 與 Lambda
 
