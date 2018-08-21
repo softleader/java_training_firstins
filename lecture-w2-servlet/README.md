@@ -18,15 +18,19 @@ x -> x * 3
 - [簡化匿名類別的實作](#簡化匿名類別的實作)、更專注於商業邏輯(對呼叫方method命名很重要) 
 - 更具可讀性([Pipeline風格](#何謂pipeline風格))
 
-### 不是函數式語言 Java8如何引入? 增加型態? 翻修現有API ?
-- Java 8 沒有加入新的函式型態, 也沒有翻修現有的API(ex: Collection2)
-- 取而代之的是而是使用[Functional Interface](#何謂functional-interface) 
-  - 在Pipeline操作時仍可藉型別推斷保有型態(解決Lambda忽略型別宣告的語法)
-- 以及使用Default methods
-  - 在Pipeline過程中經常會用到的methods所涉及的操作(過濾、資料轉型).
-  - 在沒有Default methods的情況下, 你能想像在現有ArrayList裡面增加static methods嗎?[程式碼會像這樣](#非pipeline)
-
-
+### 何謂Functional Interface?
+- 只有一個抽象方法的介面
+- @FunctionalInterface
+```java
+@FunctionalInterface
+public interface Callable<V> {
+    V call() throws Exception;
+}
+@FunctionalInterface
+public interface Runnable {
+    public abstract void run();
+}
+```
 
 ### JDK8 Functional API
 - [閱讀API前必須知道的四大介面](#閱讀api前必須知道的四大介面)
@@ -68,7 +72,7 @@ Collections.sort(students, (student1, student2) -> student1.getAge() - student2.
 ```java
 CustomizedHelperLikeType.map(
 	CustomizedHelperLikeType.filter(
-		CustomizedHelperLikeType.list(1, 2, 3)
+		CustomizedHelperLikeType.of(1, 2, 3)
 	, condition)
 , mapper);
 ```
@@ -84,19 +88,7 @@ CustomizedStreamLikeTypeImpl
 - 商業邏輯單元化: 測試、重組
 - 流程與邏輯切割分明: 可讀性、維護
 
-### 何謂Functional Interface?
-- 只有一個抽象方法的介面
-- @FunctionalInterface
-```java
-@FunctionalInterface
-public interface Callable<V> {
-    V call() throws Exception;
-}
-@FunctionalInterface
-public interface Runnable {
-    public abstract void run();
-}
-```
+
 * * *
 
 ## Stream
