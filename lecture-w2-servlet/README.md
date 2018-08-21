@@ -27,7 +27,7 @@ x -> x * 3
  - 使用方法 orElse(), orElseGet(), orElseThrow()
  - 比較差異 orElse(), orElseGet()
  
-### [Stream 與 Lambda]
+### Stream 與 Lambda
  - [直接打開Eclipse看程式吧](#直接打開eclipse看程式吧)
 * * *
 * * *
@@ -150,13 +150,13 @@ public interface Runnable {
 
 
 ### 閱讀API前必須知道的四大介面
-- java.util.function.Function
+- [java.util.function.Function](https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html)
   - input 轉變成 output
-- java.util.function.Predicate
+- [java.util.function.Predicate](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html)
   - input 轉變成 boolean
-- java.util.function.Consumer
+- [java.util.function.Consumer](https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html)
   - 有input, 沒有output
-- java.util.function.Supplier
+- [java.util.function.Supplier](https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html)
   - 沒有input, 有output
 
 * * *
