@@ -20,9 +20,11 @@ x -> x * 3
 
 ### 不是函數式語言 Java8如何引入? 增加型態? 翻修現有API ?
 - Java 8 沒有加入新的函式型態, 也沒有翻修現有的API(ex: Collection2)
-- 取而代之的是而是使用[Functional Interface](#何謂functional-interface) *型別推斷*
-- 以及預設實作、預設方法(Default methods) *andThen()*
-  - 你能想像在現有ArrayList裡面增加static methods嗎?
+- 取而代之的是而是使用[Functional Interface](#何謂functional-interface) 
+  - 在Pipeline操作時仍可藉型別推斷保有型態(解決Lambda忽略型別宣告的語法)
+- 以及使用Default methods
+  - 在Pipeline過程中經常會用到的methods所涉及的操作(過濾、資料轉型).
+  - 在沒有Default methods的情況下, 你能想像在現有ArrayList裡面增加static methods嗎?[程式碼會像這樣](#非pipeline)
 
 
 
@@ -62,7 +64,7 @@ Collections.sort(students, (student1, student2) -> student1.getAge() - student2.
 
 
 ### 何謂Pipeline風格?
-- 非管線式
+- 非Pipeline
 ```java
 CustomizedHelperLikeType.map(
 CustomizedHelperLikeType.filter(
