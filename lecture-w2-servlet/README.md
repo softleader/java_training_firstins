@@ -34,15 +34,15 @@ public interface Runnable {
 
 ### JDK8 Functional API
 - [閱讀API前必須知道的四大介面](#閱讀api前必須知道的四大介面)
-- [Stream 的 reduce 與 collect]()
 - [誰可以使用Stream?](#誰可以使用stream)
 - [Stream怎麼用?](stream怎麼用-java.util.stream.stream)
+- [Stream 的 reduce 與 collect]()
 - [處理null的好幫手 Optional](#處理null的好幫手-optional)
 
 
  
-### Stream 與 Lambda
- - [直接打開Eclipse看程式吧](#直接打開eclipse看程式吧)
+### [課後練習](#課後練習)
+
 * * *
 * * *
 
@@ -138,7 +138,7 @@ CustomizedStreamLikeTypeImpl
 * * *
 ## Stream 與 Lambda
 
-### 直接打開Eclipse看程式吧 
+### 課後練習 
 - 執行進入點 lambda.exercise.HumanResourceExecutor
 - 商業邏輯   lambda.exercise.service.PersonService
 - 資料物件   lambda.exercise.model.Person
