@@ -1,7 +1,7 @@
 # Week 2 Introduction for Java8 Lambda and Java Servlet (2018/08/22)
 
-### Lambda關心什麼？ 不關心什麼？
-```
+### Lambda 長什麼樣子? 它關心什麼？ 不關心什麼？
+```javascript
 f(x) = x * 3
 x -> x * 3
 ```
@@ -23,10 +23,10 @@ x -> x * 3
 
 
 ### 處理null的好幫手 Optional
-
-
-
-
+ - 建立方法 of(), ofNullable()
+ - 使用方法 orElse(), orElseGet(), orElseThrow()
+ - 比較差異 orElse(), orElseGet()
+ 
 * * *
 
 ## Lambda
@@ -158,3 +158,8 @@ public interface Runnable {
 
 * * *
 ## Stream 與 Lambda
+
+### 直接打開Eclipse看程式吧 
+- 執行進入點 lambda.exercise.HumanResourceExecutor
+- 商業邏輯   lambda.exercise.service.PersonService
+- 資料物件   lambda.exercise.model.Person
