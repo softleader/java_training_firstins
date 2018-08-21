@@ -43,14 +43,14 @@ x -> x * 3
 ```java
 Collections.sort(students, new Comparator<Student>() {
 	@Override
-	public int compare(Student o1, Student o2) {
-		return Integer.compare(o1.getAge(), o2.getAge());
+	public int compare(Student student1, Student student2) {
+		return student1.getAge() - student2.getAge();
 	}
 });
 ```
 - 使用Lambda
 ```java
-Collections.sort(students, Comparator.comparing(student -> student.getAge()));
+Collections.sort(students, (student1, student2) -> student1.getAge() - student2.getAge()));
 ```
 
 
