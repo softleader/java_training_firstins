@@ -67,8 +67,10 @@ Collections.sort(students, (student1, student2) -> student1.getAge() - student2.
 - 非Pipeline
 ```java
 CustomizedHelperLikeType.map(
-CustomizedHelperLikeType.filter(
-CustomizedHelperLikeType.list(1, 2, 3), condition), mapper);
+	CustomizedHelperLikeType.filter(
+		CustomizedHelperLikeType.list(1, 2, 3)
+	, condition)
+, mapper);
 ```
 - Pipeline
 ```java
