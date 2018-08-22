@@ -168,11 +168,6 @@ CustomizedStreamLikeTypeImpl
 ### Servlet首次request耗時較久的原因
 Servlet首次接到request會先呼叫init(ServletConfig config)  
 因為這個步驟會將初始資料設定到Servlet, 所以耗時較久
-### 整個Context中Servlet只會被實例化一次
-除了特殊例子(**SingleThreadModel**)外, 多個request呼叫同一Servlet時  
-呼叫的都是同一個Servlet實例, Container會根據設定(可能從Threadpool取出)採用多個Thread呼叫.  
-![非STM與STM](https://drive.google.com/uc?id=1DUXRApw6fiOuqDKe73ctv1508JIWOx48&authuser=0)
-
 
 * * *
 
