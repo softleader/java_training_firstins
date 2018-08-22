@@ -158,6 +158,7 @@ CustomizedStreamLikeTypeImpl
  * * *
 ## Servlet life cycle
 ![servlet life cycle](https://www.tutorialspoint.com/servlets/images/servlet-lifecycle.jpg)
+圖片取自https://www.tutorialspoint.com/
 ### Servlet 的生命週期 
 |執行者|執行內容|被執行物件|頻率|
 |-----|--------|----|----|
