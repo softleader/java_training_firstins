@@ -10,7 +10,7 @@ x -> x * 3
 ```
 - 不關心目標型態 (因為有型別推斷)
 - 不關心方法名稱 (實作方的角度)
-- Lambda不關心[Functional Interface](#何謂functional-interface)的名稱
+- 不關心[Functional Interface](#何謂functional-interface)的名稱
 - 只關心方法的實作
 
 ### Java中與Lambda最相似的即Anonymous Class
