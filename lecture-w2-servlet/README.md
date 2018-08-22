@@ -18,10 +18,10 @@ x -> x * 3
   - 什麼是Anonymous Class?
   - 試著在Java中想要new一個Interface
 ### 使用Lambda的最佳時機？
-- 當Anonymous Class剛好是[Functional Interface]((#何謂functional-interface))時
+- 當Anonymous Class剛好是[Functional Interface](#何謂functional-interface)時
 ### 使用Lambda有什麼好處？
 - 更抽象、更共用(待會開始動手做時會演練)
-- [簡化匿名類別的實作](#簡化匿名類別的實作)、更專注於商業邏輯(呼叫方只需從方法命名即可掌握該流程) 
+- [簡化Anonymous Class的實作](#簡化anonymous-class的實作)、更專注於商業邏輯(呼叫方只需從方法命名即可掌握該流程) 
 
 ### 何謂Functional Interface?
 - 恰/只有一個抽象方法的介面
@@ -57,7 +57,7 @@ public interface Runnable {
 ## Lambda
 
 
-### 簡化匿名類別的實作
+### 簡化Anonymous Class的實作
 -  使用匿名類別
 ```java
 Collections.sort(students, new Comparator<Student>() {
