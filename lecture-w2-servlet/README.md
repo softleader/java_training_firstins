@@ -1,5 +1,6 @@
 # Week 2 Introduction for Java8 Lambda and Java Servlet (2018/08/22)
 
+## Lambda
 ### Lambda 長什麼樣子? 它關心什麼？ 不關心什麼？
 ```java
 public int normalFunction(int x) {
@@ -24,7 +25,7 @@ x -> x * 3
 - [簡化Anonymous Class的實作](#簡化anonymous-class的實作)、更專注於商業邏輯(呼叫方只需從方法命名即可掌握該流程) 
 
 
-
+## Stream
 ### JDK8 Functional API
 - [實現Pipeline風格](#何謂pipeline風格)
 - [閱讀API前必須知道的四大介面](#閱讀api前必須知道的四大介面)
@@ -34,15 +35,14 @@ x -> x * 3
 - [處理null的好幫手 Optional](#處理null的好幫手-optional)
 
 
- 
+## Servlet
+### [Servlet 的生命週期](#servlet-的生命週期)
+
 ### 課後練習
 - [試著使用Stream與Lambda語法實作商業邏輯](#試著使用stream與lambda語法實作商業邏輯)
 
 * * *
 * * *
-
-## Lambda
-
 
 ### 簡化Anonymous Class的實作
 -  使用匿名類別
@@ -99,7 +99,6 @@ CustomizedStreamLikeTypeImpl
 
 * * *
 
-## Stream
 ### 誰可以使用Stream?
 - 所有繼承自Collection的Class都能呼叫.stream()
     - 此方法可以將Collection<E>轉成Stream<E>
@@ -148,15 +147,6 @@ CustomizedStreamLikeTypeImpl
  - 建立方法 of(), ofNullable()
  - 使用方法 orElse(), orElseGet(), orElseThrow()
  - 比較差異 orElse(), orElseGet()
-* * *
-
-### 課後練習
-### 試著使用Stream與Lambda語法實作商業邏輯
-- 執行進入點 lambda.exercise.HumanResourceExecutor
-- 商業邏輯   lambda.exercise.service.PersonService
-- 資料物件   lambda.exercise.model.Person
-
-
 
  * * *
 ## Servlet life cycle
@@ -175,3 +165,15 @@ Servlet首次接到request會先呼叫init(ServletConfig config)
 除了特殊例子(**SingleThreadModel**)外, 多個request呼叫同一Servlet時  
 呼叫的都是同一個Servlet實例, Container會根據設定(可能從Threadpool取出)採用多個Thread呼叫.  
 ![非STM與STM](https://drive.google.com/uc?id=1DUXRApw6fiOuqDKe73ctv1508JIWOx48&authuser=0)
+
+
+* * *
+
+### 課後練習
+### 試著使用Stream與Lambda語法實作商業邏輯
+- 執行進入點 lambda.exercise.HumanResourceExecutor
+- 商業邏輯   lambda.exercise.service.PersonService
+- 資料物件   lambda.exercise.model.Person
+
+
+
