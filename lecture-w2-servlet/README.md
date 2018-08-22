@@ -172,7 +172,7 @@ Servlet首次接到request會先呼叫init(ServletConfig config)
 
 * * *
 
-### 課後練習
+## 課後練習
 ### 試著使用Stream與Lambda語法實作商業邏輯
 - 執行進入點 lambda.exercise.HumanResourceExecutor
 - 商業邏輯   lambda.exercise.service.PersonService
