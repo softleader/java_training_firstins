@@ -8,12 +8,17 @@ public int normalFunction(int x) {
 
 x -> x * 3
 ```
-- 不關心[Functional Interface](#何謂functional-interface)的名稱
 - 不關心目標型態 (因為有型別推斷)
 - 不關心方法名稱 (實作方的角度)
+- Lambda不關心[Functional Interface](#何謂functional-interface)的名稱
 - 只關心方法的實作
 
-### 函數式程式設計有什麼好處？
+### Java中與Lambda最相似的即Anonymous Class
+- 什麼是Anonymous Class?
+  - 試著在Java中想要new一個Interface
+### 當Anonymous Class剛好是Functional Interface時
+- 就是使用Lambda的最佳時機
+### 使用Lambda有什麼好處？
 - 更抽象、更共用(待會開始動手做時會演練)
 - [簡化匿名類別的實作](#簡化匿名類別的實作)、更專注於商業邏輯(呼叫方只需從方法命名即可掌握該流程) 
 
