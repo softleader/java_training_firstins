@@ -23,19 +23,6 @@ x -> x * 3
 - 更抽象、更共用(待會開始動手做時會演練)
 - [簡化Anonymous Class的實作](#簡化anonymous-class的實作)、更專注於商業邏輯(呼叫方只需從方法命名即可掌握該流程) 
 
-### 何謂Functional Interface?
-- 恰/只有一個抽象方法的介面
-- @FunctionalInterface
-```java
-@FunctionalInterface
-public interface Callable<V> {
-    V call() throws Exception;
-}
-@FunctionalInterface
-public interface Runnable {
-    public abstract void run();
-}
-```
 
 
 ### JDK8 Functional API
@@ -74,6 +61,19 @@ Collections.sort(students, (student1, student2) -> student1.getAge() - student2.
 
 
 
+### 何謂Functional Interface?
+- 恰/只有一個抽象方法的介面
+- @FunctionalInterface
+```java
+@FunctionalInterface
+public interface Callable<V> {
+    V call() throws Exception;
+}
+@FunctionalInterface
+public interface Runnable {
+    public abstract void run();
+}
+```
 
 ### 何謂Pipeline風格?
 - 非Pipeline
