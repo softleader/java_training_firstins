@@ -2,7 +2,7 @@
 
 ### Lambda 長什麼樣子? 它關心什麼？ 不關心什麼？
 ```java
-public int f(int x) {
+public int normalFunction(int x) {
     return x * 3;
 }
 
