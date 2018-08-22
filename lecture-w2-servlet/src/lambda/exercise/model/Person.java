@@ -2,7 +2,6 @@ package lambda.exercise.model;
 
 
 import com.google.inject.internal.util.Lists;
-import java.math.BigDecimal;
 import java.util.List;
 import lambda.exercise.enums.Gender;
 import lambda.exercise.enums.Relation;
