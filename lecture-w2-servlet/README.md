@@ -1,5 +1,6 @@
 # Week 2 Introduction for Java8 Lambda and Java Servlet (2018/08/22)
 
+
 ## Lambda
 ### Lambda 長什麼樣子? 它關心什麼？ 不關心什麼？
 ```java
@@ -25,6 +26,8 @@ x -> x * 3
 - [簡化Anonymous Class的實作](#簡化anonymous-class的實作)、更專注於商業邏輯(呼叫方只需從方法命名即可掌握該流程) 
 
 
+
+
 ## Stream
 ### JDK8 Functional API
 - [實現Pipeline風格](#何謂pipeline風格)
@@ -35,13 +38,17 @@ x -> x * 3
 - [處理null的好幫手 Optional](#處理null的好幫手-optional)
 
 
+
+
 ## Servlet
-### [Servlet 的生命週期](#servlet-的生命週期)
+### [Servlet 的生命週期](#servlet-life-cycle)
+
+
+
 
 ### 課後練習
 - [試著使用Stream與Lambda語法實作商業邏輯](#試著使用stream與lambda語法實作商業邏輯)
 
-* * *
 * * *
 
 ### 簡化Anonymous Class的實作
