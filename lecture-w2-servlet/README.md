@@ -34,7 +34,7 @@ x -> x * 3
 - [閱讀API前必須知道的四大介面](#閱讀api前必須知道的四大介面)
 - [誰可以使用Stream?](#誰可以使用stream)
 - [Stream怎麼用?](stream怎麼用-java.util.stream.stream)
-- [Stream 的 reduce 與 collect](stream-的-reduce-與-collect)
+- [Stream 的 reduce 與 collect](#stream-的-reduce-與-collect)
 - [處理null的好幫手 Optional](#處理null的好幫手-optional)
 
 
