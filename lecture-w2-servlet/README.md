@@ -149,3 +149,23 @@ CustomizedStreamLikeTypeImpl
 - 執行進入點 lambda.exercise.HumanResourceExecutor
 - 商業邏輯   lambda.exercise.service.PersonService
 - 資料物件   lambda.exercise.model.Person
+
+
+
+ * * *
+## Servlet life cycle
+![servlet life cycle](https://www.tutorialspoint.com/servlets/images/servlet-lifecycle.jpg)
+### Servlet 的生命週期 
+|執行者|執行內容|被執行物件|頻率|
+|-----|--------|----|----|
+|Container|實例化Servlet||僅一次|
+|Container|接到該Servlet的首次request時呼叫init()|Servlet|僅一次|
+|Container|呼叫service()並根據擋頭判斷要呼叫Servlet的doGet()或是doPost()|Servlet|每次request都會呼叫|
+|Container|呼叫destroy(), 通常在Container關閉時呼叫|Servlet|僅一次|
+### Servlet首次request耗時較久的原因
+Servlet首次接到request會先呼叫init(ServletConfig config)  
+因為這個步驟會將初始資料設定到Servlet, 所以耗時較久
+### 整個Context中Servlet只會被實例化一次
+除了特殊例子(**SingleThreadModel**)外, 多個request呼叫同一Servlet時  
+呼叫的都是同一個Servlet實例, Container會根據設定(可能從Threadpool取出)採用多個Thread呼叫.  
+![非STM與STM](https://drive.google.com/uc?id=1DUXRApw6fiOuqDKe73ctv1508JIWOx48&authuser=0)
