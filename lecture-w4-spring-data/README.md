@@ -40,10 +40,65 @@
 
 ## 實作
 ### 建置Entity
-- TBD
+- 範例: `com.example.firstins.member.Member`
+- 前置
+    1. 準備一個要做為Table映射的Pojo Class
+    2. ClassName對應TableName、FieldName對應ColumnName
+- 必要
+    - `@Entity`
+        - 宣告於Class上
+        - 向Spring宣告該Class是一個Entity
+    - `@Id`
+        - 宣告於Field上
+        - 表示該Field為此Entity的PrimaryKey
+    - `@Column`
+        - 宣告於Field上
+        - 表示該Field為此Entity需要映射到Table上的欄位
+        - 自帶預設的ORM規則，若有需要覆寫(如映射的ColumnName)，則參考此Annotation內的屬性描述
+
+- 額外
+    - `@GeneratedValue`
+        - 宣告於Field上
+        - 告訴此Column的生成方式，預設為GenerationType.AUTO讓容器來自動產生(通常是流水號)
+    - `@PrePersist`
+        - 宣告於method上
+        - 於進行Insert處理前執行此method
+    - `@PreUpdate`
+        - 宣告於method上
+        - 於進行Update處理前執行此method
+    - `@MappedSuperclass`
+        - 宣告於Class上
+        - 向Spring宣告該Class是一個抽象的Entity(通常用於每個Table共通的欄位)
+    - `@Table`
+        - 宣告於Class上
+        - 需要覆寫`@Entity`預設的ORM規則時會使用
+> Spring真對Entity有一套預設的ORM規則，以命名而言，都是根據駝峰命名轉大寫並以底線區隔做為TableName或ColumnName
+- `練習`
+    ```
+    1. 增加Age欄位
+    2. 設定Age欄位的長度為3位數
+    3. 設定Name欄位為Unique
+    4. 設定Name欄位為NonNull
+    5. 建立一個地址的Entity，Field至少要有郵遞區號、城市、行政區、地址
+    ```
 
 ### 建置Dao
-- TBD
+- 範例: `com.example.firstins.member.MemberDao`
+- 前置:
+    1. 準備一個interface並繼承`org.springframework.data.jpa.repository.JpaRepository`
+    2. `JpaRepository`的泛型宣告Entity型別與ID型別
+    > 繼承了`JpaRepository`後Spring便會於啟動時進行實作，可以用`@AutoWired`取得之，且有擁有基本的CRUD功能
+- 撰寫查詢語句
+    - https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
+    - 例: 以Member.name查詢
+        - `List<Member> findByName(String name);`
+- `練習`
+    ```
+    1. 練習一套基本的CRUD
+    2. 增加以Age進行查詢的方法
+    3. 增加以區間查詢Age的方法(例: 查詢18~24歲的人)
+    4. 建立地址的Entity的Dao，並寫Test確保能正常運行
+    ```
 
 ### ManyToOne, OneToMany
 - TBD
