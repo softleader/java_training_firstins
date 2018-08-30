@@ -4,7 +4,7 @@
 
 - Maven installed (3.5 or above):
 
-```
+```sh
 mvn -version
 ```
 
@@ -45,7 +45,7 @@ Spring Boot 協助你快速建置 Stand-alone, Production-grade 的 Spring based
 
 ### Directory Layout
 
-```
+```sh
 .
 ├── pom.xml            >> Project Object Model
 └── src
@@ -61,15 +61,60 @@ Spring Boot 協助你快速建置 Stand-alone, Production-grade 的 Spring based
 
 ### Just Run
 
-```
+```sh
+cd <project-directory>
+
+# 啟動 server
 mvn spring-boot:run
+
+# ctrl + c to exit
 ```
+
+## application.properties
+
+所有設定可以透過 `application.properties` 快速更改, 請參考官方文件: [Common application properties](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#common-application-properties) 找到想調整的參數
+
+## Hello World
+
+1. 以 maven 專案匯入你的 IDE
+1. 建立 package: `tw.com.firstins.week3.web`
+1. 建立 class: `tw.com.firstins.week3.web.IndexController`
+
+### @Bean
+
+1. 建立 package: `tw.com.firstins.week3.service`
+1. 建立 class: `tw.com.firstins.week3.service.HelloWorldService`
 
 ## Logging
 
+1. 在 `HelloWorldService` 寫一些 debug 訊息
+2. 調整 `application.propertie` 將 debug 訊息也印出吧
+
+## Packaging
+
+```sh
+cd <project-directory>
+
+# 打包
+mvn package
+
+# 打包過程的暫存目錄
+cd target
+
+# 執行
+java -jar week3-0.0.1-SNAPSHOT.jar
+```
+
+### How to deploy to Tomcat?
+
+1. Download tomcat 8.5 from [tomcat.apache.org](https://tomcat.apache.org/download-80.cgi#8.5.33)
+1. Change the packaging from `jar` to `war` in `pom.xml`
+1. Add `SpringBootServletInitializer` to your main class
+1. Packaging again!
+
+## Appendix
 
 - [Spring Boot Dependency versions](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#appendix-dependency-versions)
-- [Common application properties](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#common-application-properties)
 
 
 
