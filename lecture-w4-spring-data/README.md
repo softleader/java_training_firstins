@@ -37,10 +37,26 @@
     spring.datasource.hikari.max-lifetime=1800000
     spring.datasource.hikari.connection-timeout=30000
     ```
+- 於Java中啟動
+    - `@EnableJpaRepositories`
+        > 由於本範例引入了 JPA starter, 這件事已經在`JpaRepositoriesAutoConfiguration`做過
+        > (透過`@Import({JpaRepositoriesAutoConfigureRegistrar.class})`)
 
 ## 實作
+### JDBC練習
+- `練習`
+    ```
+    com.example.firstins.member.MemberDaoTest.jdbcExample
+    1. 完成 Query By Name
+    2. 完成 Update
+    3. 完成 Delete
+    ```
+    > 撰寫時須注意: Connection, PreparedStatement, ResultSet 等 jdbc 物件需要 close()
+- `測試`
+    1. 執行 com.example.firstins.member.MemberDaoTest.jdbcExample
+
 ### 建置Entity
-- 範例: `com.example.firstins.member.Member`
+- 範例: `com.example.firstins.member.entity.Member`
 - 前置
     1. 準備一個要做為Table映射的Pojo Class
     2. ClassName對應TableName、FieldName對應ColumnName
@@ -75,15 +91,22 @@
 > Spring真對Entity有一套預設的ORM規則，以命名而言，都是根據駝峰命名轉大寫並以底線區隔做為TableName或ColumnName
 - `練習`
     ```
+    com.example.firstins.member.Member
     1. 增加Age欄位
     2. 設定Age欄位的長度為3位數
     3. 設定Name欄位為Unique
     4. 設定Name欄位為NonNull
-    5. 建立一個地址的Entity，Field至少要有郵遞區號、城市、行政區、地址
+
+    com.example.firstins.member.Address
+    1. 建立一個地址的Entity，Field至少要有郵遞區號、城市、行政區、地址
     ```
+- `測試`
+    1. 啟動 com.example.firstins.LectureW4SpringDataApplication.main
+        > 由於有引入 spring-web 的緣故，會自動以嵌入式的 tomcat 啟動
+    2. 透過 [h2 console](http://localhost:8080/h2) 進行 SQL 指令操作
 
 ### 建置Dao
-- 範例: `com.example.firstins.member.MemberDao`
+- 範例: `com.example.firstins.member.dao.MemberDao`
 - 前置:
     1. 準備一個interface並繼承`org.springframework.data.jpa.repository.JpaRepository`
     2. `JpaRepository`的泛型宣告Entity型別與ID型別
@@ -92,23 +115,38 @@
     - https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
     - 例: 以Member.name查詢
         - `List<Member> findByName(String name);`
+- 進階的查詢方式
+    - JPQL
+    - NativeSQL
 - `練習`
     ```
-    1. 練習一套基本的CRUD
-    2. 增加以Age進行查詢的方法
-    3. 增加以區間查詢Age的方法(例: 查詢18~24歲的人)
-    4. 建立地址的Entity的Dao，並寫Test確保能正常運行
-    ```
+    com.example.firstins.member.MemberDaoTest.jpaExample
+    1. 練習一套基本的crud
 
-### ManyToOne, OneToMany
-- TBD
+    com.example.firstins.member.MemberDao
+    1. 增加以age進行查詢的方法
+    2. 增加以區間查詢age的方法(例: 查詢18~24歲的人)
+
+    com.example.firstins.member.AddressDao
+    1. 建立地址的entity的dao，並寫test確保能正常運行
+    ```
+- `測試`
+    1. 於 com.example.firstins.member.MemberDaoTest.jpaExample 撰寫測試程式，並啟動之
+    2. 利用 System.out.println 驗證
 
 ## 附錄
 ### 額外補充: Hibernate Session
-- TBD
+- Hibernate的Entity存在三種狀態
+    - transient
+        > 透過 new 語句產生的新物件，尚未進入db
+    - persistent
+        > 透過 query 語句從db撈出的物件
+        > 對其的任何 set 操作皆會在 session 結束後推入至db
+    - detached
+        > 透過 query 語句從db撈出的物件，但已經脫離 session 範圍
 
 ### 深入閱讀
-1. [ORM介紹及ORM優點、缺點](http://www.cnblogs.com/xiaowuzi/p/3485302.html)
-2. [JDBC(待補)]
-3. [connection pool(待補)]
+1. [Spring Data JPA - Projects](https://projects.spring.io/spring-data-jpa/)
+2. [ORM介紹及ORM優點、缺點](http://www.cnblogs.com/xiaowuzi/p/3485302.html)
+3. [connection pool(HikariCP)](https://www.baeldung.com/hikaricp)
 4. [SpringBoot2使用HikariCP的理由](http://blog.didispace.com/Springboot-2-0-HikariCP-default-reason/)

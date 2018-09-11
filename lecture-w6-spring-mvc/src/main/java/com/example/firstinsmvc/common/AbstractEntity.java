@@ -1,4 +1,4 @@
-package com.example.firstins.common;
+package com.example.firstinsmvc.common;
 
 import java.time.LocalDateTime;
 
@@ -10,7 +10,12 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @MappedSuperclass
+@Getter
+@Setter
 public abstract class AbstractEntity {
 
 	@Id
@@ -32,30 +37,6 @@ public abstract class AbstractEntity {
 	@PreUpdate
 	protected void onUpdate() {
 		this.updatedTime = LocalDateTime.now();
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public LocalDateTime getCreatedTime() {
-		return createdTime;
-	}
-
-	public void setCreatedTime(LocalDateTime createdTime) {
-		this.createdTime = createdTime;
-	}
-
-	public LocalDateTime getUpdatedTime() {
-		return updatedTime;
-	}
-
-	public void setUpdatedTime(LocalDateTime updatedTime) {
-		this.updatedTime = updatedTime;
 	}
 
 }

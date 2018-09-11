@@ -1,4 +1,4 @@
-package com.example.firstins.member;
+package com.example.firstins.member.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
