@@ -25,7 +25,7 @@
 #### Create Dao
 
 - 建立 package: `tw.com.firstins.week5.dao`
-- 建立 Class: `tw.com.firstins.week5.dao.MemberDao`, 包含以下 method
+- 建立 Interface: `tw.com.firstins.week5.dao.MemberDao`, 包含以下 method
 	- 以 Name 查詢多筆 Member 資料
 
 ## @Service
