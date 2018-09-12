@@ -18,14 +18,14 @@
 #### Create Entity
 
 - 建立 package: `tw.com.firstins.week5.entity`
-- 建立 Class: `tw.com.firstins.week5.entity.Member`, 包含以下 field
+- 建立 class: `tw.com.firstins.week5.entity.Member`, 包含以下 field
 	- @Id @GeneratedValue Long id
 	- String name
 
 #### Create Dao
 
 - 建立 package: `tw.com.firstins.week5.dao`
-- 建立 Interface: `tw.com.firstins.week5.dao.MemberDao`, 包含以下 method
+- 建立 interface: `tw.com.firstins.week5.dao.MemberDao`, 包含以下 method
 	- 以 Name 查詢多筆 Member 資料
 
 ## @Service
@@ -33,7 +33,7 @@
 Service 是一種 Component, Spring Framework 在啟動時會掃描所有 Component, 建立成 Bean 並管理其生命週期, 程式調用等所有事宜
 
 - 建立 package: `tw.com.firstins.week5.service`
-- 建立 Class: `tw.com.firstins.week5.dao.MemberService`
+- 建立 class: `tw.com.firstins.week5.dao.MemberService`
 - 調整 log 等級:
 	- 將 `org.springframework` 改為 warm
 	- 將 `org.springframework.beans` 改為 *debug*
@@ -66,7 +66,7 @@ Service 是一種 Component, Spring Framework 在啟動時會掃描所有 Compon
 ### How Spring implements AOP?
 
 - 建立 package: `tw.com.firstins.week5.aop`
-- 建立 Class: `tw.com.firstins.week5.aop.Say` with main method
+- 建立 class: `tw.com.firstins.week5.aop.Say` with main method
 
 	```java
 	public void greeting() {
@@ -83,7 +83,7 @@ Service 是一種 Component, Spring Framework 在啟動時會掃描所有 Compon
 
 ### propagation
 
-- 建立 Class: `tw.com.firstins.week5.service.RegistryService`
+- 建立 class: `tw.com.firstins.week5.service.RegistryService`
 
 | 常用 Propagation | 說明 |
 |-----|-----|
