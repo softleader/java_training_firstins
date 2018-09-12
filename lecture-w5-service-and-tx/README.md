@@ -52,6 +52,13 @@ Service 是一種 Component, Spring Framework 在啟動時會掃描所有 Compon
 - *@PostConstruct*
 - *@PreDestroy*
 
+#### @Scope
+
+- *ConfigurableBeanFactory.SCOPE_SINGLETON* 
+- *ConfigurableBeanFactory.SCOPE_PROTOTYPE*
+- *ScopedProxyMode.DEFAULT*
+- *ScopedProxyMode.TARGET_CLASS*
+
 ```java
 @Service // ("myService")
 //@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE,
@@ -83,13 +90,6 @@ public class MemberService implements InitializingBean, DisposableBean {
   }
 }
 ```
-
-#### @Scope
-
-- *ConfigurableBeanFactory.SCOPE_SINGLETON* 
-- *ConfigurableBeanFactory.SCOPE_PROTOTYPE*
-- *ScopedProxyMode.DEFAULT*
-- *ScopedProxyMode.TARGET_CLASS*
 
 ## AOP
 
