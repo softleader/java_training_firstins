@@ -33,7 +33,7 @@
 Service 是一種 Component, Spring Framework 在啟動時會掃描所有 Component, 建立成 Bean 並管理其生命週期, 程式調用等所有事宜
 
 - 建立 package: `tw.com.firstins.week5.service`
-- 建立 class: `tw.com.firstins.week5.dao.MemberService`
+- 建立 class: `tw.com.firstins.week5.service.MemberService`
 - 調整 log 等級:
 	- 將 `org.springframework` 改為 warm
 	- 將 `org.springframework.beans` 改為 *debug*
