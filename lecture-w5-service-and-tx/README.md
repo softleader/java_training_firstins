@@ -54,6 +54,8 @@ Service 是一種 Component, Spring Framework 在啟動時會掃描所有 Compon
 
 ```java
 @Service // ("myService")
+//@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE,
+//        proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class MemberService implements InitializingBean, DisposableBean {
 
   public MemberService() {
