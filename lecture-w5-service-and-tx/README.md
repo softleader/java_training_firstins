@@ -52,6 +52,36 @@ Service 是一種 Component, Spring Framework 在啟動時會掃描所有 Compon
 - *@PostConstruct*
 - *@PreDestroy*
 
+```java
+@Service // ("myService")
+public class MemberService implements InitializingBean, DisposableBean {
+
+  public MemberService() {
+    System.out.println("constructor");
+  }
+
+  @PostConstruct
+  public void postConstruct() {
+    System.out.println("postConstruct");
+  }
+
+  @PreDestroy
+  public void preDestroy() {
+    System.out.println("preDestroy");
+  }
+
+  @Override
+  public void destroy() throws Exception {
+    System.out.println("destroy");
+  }
+
+  @Override
+  public void afterPropertiesSet() throws Exception {
+    System.out.println("afterPropertiesSet");
+  }
+}
+```
+
 #### @Scope
 
 - *ConfigurableBeanFactory.SCOPE_SINGLETON* 
