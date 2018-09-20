@@ -129,5 +129,11 @@
     2. 新增一套關於Role的功能，資料欄位要有Code(代號)與Name(中文名稱)與Desc(說明)，可以複製Member進行修改
     ```
 
+### 補充: ObjectMapper
+- 範例: `com.example.firstinsmvc.common.WebObjectMapper`
+- SpringMvc預設透過jackson這個framework進行java物件與json文字的轉換
+- 當需要修改toJson的規則時，則需要修改ObjectMapper
+    - 例:時間與日期
+
 ## 額外閱讀
 - [跨來源資源共用](https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS)
