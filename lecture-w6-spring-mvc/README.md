@@ -127,6 +127,9 @@
     ```
     1. 增加AGE欄位，並修改相對應的新刪修查功能
     2. 新增一套關於Role的功能，資料欄位要有Code(代號)與Name(中文名稱)與Desc(說明)，可以複製Member進行修改
+        > 先完成Entity,Dao，建議以junit測試是否正常運作
+        > 再寫Controller,Service，然後以ARC測試
+        > 最後寫html
     ```
 
 ### 補充: ObjectMapper
