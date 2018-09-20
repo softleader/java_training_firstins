@@ -39,7 +39,7 @@
 
 ## 實作
 ### 第一個 Controller
-- 範例: `com.example.firstinsmvc.web.MemberController`
+- 範例: `com.example.firstinsmvc.member.web.MemberController`
 - 元素:
     1. `@Controller`
         - 宣告於Class層
@@ -86,7 +86,7 @@
     ```
 
 ### Controller and View
-- 範例: `com.example.firstinsmvc.web.MemberController`, `member.html`
+- 範例: `com.example.firstinsmvc.member.web.MemberController`, `member.html`
 - 於畫面上打出Request給Controller:
     - 本範例使用 jQuery
     ```javascript

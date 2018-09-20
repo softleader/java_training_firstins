@@ -1,4 +1,4 @@
-package com.example.firstinsmvc.web;
+package com.example.firstinsmvc.member.web;
 
 import java.util.List;
 
