@@ -96,12 +96,12 @@
     $(function() {
         const MEMBER_URL = "http://localhost:8080/sample/member";
 
-        // Query
+        // 查詢
         $('#query').on('click', e => {
             $.ajax({
                 url: MEMBER_URL,
                 method: 'GET'})
-                .done((data, textStatus, jqXHR) => {12
+                .done((data, textStatus, jqXHR) => {
                     $('#query_result').empty();
                     data.forEach(member => {
                         let $button = $('<button type="button">Get</button>');
@@ -126,12 +126,12 @@
                 });
         });
 
-        // Clean
+        // 清空
         $('#clean').on('click', e => {
             $('#form input').val('');
         });
 
-        // Insert/update
+        // 新增/修改
         $('#save').on('click', e => {
             $.ajax({
                 url: MEMBER_URL,
@@ -143,7 +143,7 @@
                 });
         });
 
-        // Delete
+        // 刪除
         $('#delete').on('click', e => {
             $.ajax({
                 url: MEMBER_URL,
