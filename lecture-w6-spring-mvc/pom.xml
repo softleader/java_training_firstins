@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>firstins-mvc</artifactId>
+	<artifactId>lecture-w4-spring-data</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>firstins-mvc</name>
+	<name>lecture-w4-spring-data</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
