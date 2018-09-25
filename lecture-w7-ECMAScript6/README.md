@@ -1,5 +1,13 @@
 # ECMAScript 6
 
+## Node.js
+
+https://nodejs.org/en/
+
+## Visual Studio Code
+
+https://code.visualstudio.com/
+
 ## ECMAScript 與 JavaScript
 
 ECMAScript 是制定腳本化語言的一種標準規範，JavaScript 則是他的實作，另外實作的有 Jscript、ActionScript…等
@@ -39,4 +47,4 @@ npm install
 npm start
 ```
 
-[http://localhost:3000/](http://localhost:3000/)
+http://localhost:3000/
