@@ -9,26 +9,12 @@ export default class LetConst extends React.Component {
   render() {
     // before ES6
     function useVar() {
-      for(var i = 0; i<10; i++) {
-
-      }
-      try {
-        return i;
-      } catch(e) {
-        return "error in useVar"
-      }
+      // TODO: 完成一個 for 迴圈，變數名稱為 i，值從 0 到 9，最後回傳 i
     }
 
     // after ES6
     function useLet() {
-      for(let i = 0; i<10; i++) {
-
-      }
-      try {
-        return i;
-      } catch(e) {
-        return "error in useLet"
-      }
+      // TODO
     }
 
     return 'useVar: ' + useVar() + ', useLet: ' + useLet();

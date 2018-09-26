@@ -11,15 +11,11 @@ export default class ForOf extends React.Component {
 
     // before ES6
     let result1 = "";
-    for(let n in array) {
-      result1 += n;
-    }
+    // TODO: 印出 array 裡的每個 element
 
     // after ES6
     let result2 = "";
-    for(let n of array) {
-      result2 += n;
-    }
+    // TODO
 
     return `result1: ${result1}, result2: ${result2}`;
   }

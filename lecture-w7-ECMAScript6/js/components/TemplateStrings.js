@@ -13,4 +13,4 @@ export default class TemplateStrings extends React.Component {
   }
 }
 
-// Work: 修改 LetConst.js，return 的部分使用 TemplateStrings 的寫法
+// TODO: 修改 LetConst.js，return 的部分使用 TemplateStrings 的寫法

@@ -23,10 +23,10 @@ export default class Destructuring extends React.Component {
     const obj = {objA: "X", objB: "Y", objC: "Z"};
 
     // before ES6
-    const obja = obj.objA, objb = obj.objB, objc = obj.objC;
+    // TODO: 取出 obj 裡面的每一個值
 
     // after ES6
-    const {objA, objB, objC} = obj;
+    // TODO
 
     return `d: ${d}, e: ${e}, f: ${f}, objA: ${objA}, objB: ${objB}, objC: ${objC}`;
   }

@@ -2,9 +2,6 @@ import Parent from "./Parent"
 
 export default class Children extends Parent {
 
-  static getZ() {
-    return "z";
-  }
 }
 
-// Work: 讓 getX = a, getY = b
+// TODO: 讓 new Children().getX = a, new Children().getY = b, Children.getZ() = z

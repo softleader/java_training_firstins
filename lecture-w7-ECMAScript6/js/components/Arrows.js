@@ -10,12 +10,11 @@ export default class Arrows extends React.Component {
     let array = [0, 1, 2];
 
     // before ES6
+    // TODO: 將 array 裡面的值各 + 1，使用 for or map
 
     // after ES6
-    array = array.map(e => e + 1);
+    // TODO
 
     return array;
   }
 }
-
-// Work: 完成 ES6 之前的寫法，將 array 裡面的值各 + 1，使用 for or map

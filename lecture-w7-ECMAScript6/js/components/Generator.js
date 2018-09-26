@@ -16,9 +16,8 @@ export default class Generator extends React.Component {
 
     // object For..Of
     const obj = {a: 1, b: 2, c: 3};
+    // TODO: 讓 object 可以使用 For...Of 語法
 
     return JSON.stringify(iter.next()) + ", " + JSON.stringify(iter.next()) + ", " + JSON.stringify(iter.next());
   }
 }
-
-// Work: 讓 object 可以使用 For...Of 語法

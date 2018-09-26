@@ -4,45 +4,23 @@ export default class Promises extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {msgs: []};
   }
 
   componentDidMount() {
-    const msgs = [];
+    // TODO: 完成以下 function，task1 執行時間 3 秒鐘，task2 執行時間 1 秒鐘，在 task1 執行完成後執行 task3 1 秒鐘
+    // 提示: 使用 setTimeout(callback, milliseconds);
 
     function task1() {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          msgs.push(" task1 done")
-          return resolve(" task1");
-        }, 3000);
-      });
     }
 
     function task2() {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          msgs.push(" task2 done")
-          return reject(" task2");
-        }, 1000);
-      });
     }
 
-    task1().then(data => {
-      msgs.push(data + " is success");
-      this.setState({msgs: msgs});
-    });
-
-    task2().then(data => {
-      msgs.push(data + " is success");
-      this.setState({msgs: msgs});
-    }).catch(error => {
-      msgs.push(error + " is error");
-      this.setState({msgs: msgs});
-    });
+    function task3() {
+    }
   }
 
   render() {
-    return this.state.msgs;
+    return '請看 console';
   }
 }

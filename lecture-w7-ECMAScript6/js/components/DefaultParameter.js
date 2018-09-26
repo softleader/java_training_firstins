@@ -9,15 +9,15 @@ export default class DefaultParameter extends React.Component {
   render() {
     // before ES6
     function abc(x) {
+      // Work: 如果 x 不存在回傳 100
     }
 
     // after ES6
-    function xyz(x = 100) {
+    function xyz(x) {
+      //TODO
       return x;
     }
 
     return xyz();
   }
 }
-
-// Work: 完成 ES6 之前的寫法，如果 x 不存在回傳 100
