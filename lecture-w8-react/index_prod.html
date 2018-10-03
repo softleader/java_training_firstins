@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>lecture-w8-react</title>
+  <link th:href="@{/sample/css/bootstrap.min.css}" rel="stylesheet"/>
+  <link th:href="@{/sample/css/font-awesome.min.css}" rel="stylesheet"/>
+</head>
+
+<body>
+
+<div id="root"></div>
+
+<script type="text/javascript" th:if="${#httpServletRequest.getServerPort() != 3000}" th:src="@{/sample/js/softleader-web-resources.min.js}"></script>
+<script type="text/javascript" th:if="${#httpServletRequest.getServerPort() == 3000}" src="http://localhost:3000/softleader-web-resources.js"></script>
+
+<script type="text/javascript" th:inline="javascript">
+  console.log('app create in index_prod.html');
+  app.create(document.getElementById('root'));
+</script>
+
+</body>
+</html>
