@@ -17,6 +17,20 @@ npm install
 npm start
 ```
 
+- build dev environment
+
+```cmd
+cd [lecture-w8-react]
+npm run build-dev
+```
+
+- build production environment
+
+```cmd
+cd [lecture-w8-react]
+npm run build
+```
+
 http://localhost:3000/
 
 ## React Introduction
