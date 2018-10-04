@@ -6,6 +6,7 @@
 
 ```cmd
 cd [lecture-w6-spring-mvc]
+mvn clean compile -DskipTests
 mvn spring-boot:run
 ```
 
@@ -17,21 +18,21 @@ npm install
 npm start
 ```
 
+http://localhost:3000/
+
 - build dev environment
 
 ```cmd
-cd [lecture-w8-react]
 npm run build-dev
 ```
 
 - build production environment
 
 ```cmd
-cd [lecture-w8-react]
 npm run build
 ```
 
-http://localhost:3000/
+http://localhost:8080/sample
 
 ## React Introduction
 
