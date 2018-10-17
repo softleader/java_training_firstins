@@ -43,3 +43,17 @@ export const update = (type, url, params) => {
       .then(data => dispatch({type, data}))
   }
 };
+
+export const remove = (type, url, params) => {
+  return function (dispatch) {
+    return fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json; charset=utf-8'
+      },
+      body: JSON.stringify(params)
+    })
+      .then(response => dispatch({type, id: params.id}))
+  }
+};
