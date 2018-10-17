@@ -1,9 +1,11 @@
 package com.example.firstinsmvc.member.web;
 
+import com.example.firstinsmvc.common.Detail;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,18 +34,31 @@ public class MemberController {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<Member> query(@PathVariable Long id) {
-		final Member member = memberService.getOne(id).orElseThrow(() -> new RuntimeException("member not found, id:" + id));
+		final Member member = memberService.getOne(id).orElseThrow(() -> new RuntimeException("data not found, id:" + id));
+
 		return ResponseEntity.ok(member);
 	}
 
 	@PostMapping
-	public ResponseEntity<Member> insert(@RequestBody Member member) {
-		return ResponseEntity.ok(memberService.insert(member));
+	public ResponseEntity<?> insert(@RequestBody Member member) {
+		final Detail detail = memberService.validation(member);
+		if (StringUtils.isEmpty(detail.getMessage())) {
+			detail.setStatusCode("200");
+			detail.setData(memberService.insert(member));
+			return ResponseEntity.ok(detail);
+		}
+    return ResponseEntity.badRequest().body(detail);
 	}
 
 	@PutMapping
-	public ResponseEntity<Member> update(@RequestBody Member member) {
-		return ResponseEntity.ok(memberService.update(member));
+	public ResponseEntity<?> update(@RequestBody Member member) {
+    final Detail detail = memberService.validation(member);
+    if (StringUtils.isEmpty(detail.getMessage())) {
+			detail.setStatusCode("200");
+			detail.setData(memberService.update(member));
+			return ResponseEntity.ok(detail);
+    }
+    return ResponseEntity.badRequest().body(detail);
 	}
 
 	@DeleteMapping

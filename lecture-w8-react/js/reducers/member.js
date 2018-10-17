@@ -1,7 +1,7 @@
 import {MEMBER_EVENTS} from "../constants/Events";
 
 const member = (state = {
-  list: []
+  list: [], message: ''
 }, action) => {
   switch (action.type) {
     case MEMBER_EVENTS.GET_ALL:
@@ -9,9 +9,19 @@ const member = (state = {
         list: action.data
       });
     case MEMBER_EVENTS.ADD:
+      let response = action.data;
+      //判斷後端回傳的狀態
+      if (response.statusCode === '200') {
       return Object.assign({}, state, {
-        list: [...state.list, action.data]
+        list: [...state.list, response.data],
+        message: ''
       });
+      } else {
+        console.log(response); //FIXME DEBUG LOG
+        return Object.assign({}, state, {
+          message: response.message
+        })
+      }
     case MEMBER_EVENTS.UPDATE:
       let newList = state.list.map(e => {
         if(e.id === action.data.id) {
