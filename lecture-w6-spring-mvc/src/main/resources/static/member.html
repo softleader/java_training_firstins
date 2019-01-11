@@ -58,9 +58,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
-    <script src="./static/form2js.js"></script>
-    <script src="./static/jquery.toObject.js"></script>
-    <script src="./static/js2form.js"></script>
+    <script src="js/form2js.js"></script>
+    <script src="js/jquery.toObject.js"></script>
+    <script src="js/js2form.js"></script>
 </head>
 <body>
 
@@ -102,7 +102,7 @@
     </form>
     <div>
         <button type="button" id="clean">清除</button>
-        <button type="button" id="save">送出</button>
+        <button type="button" id="save">新增</button>
         <button type="button" id="delete">刪除</button>
     </div>
 </div>
@@ -126,6 +126,7 @@
             $('#id').val(member.id);
             $('#empNo').val(member.empNo);
             $('#name').val(member.name);
+            autoSaveMode();
           });
 
           let $tr = $('<tr></tr>');
@@ -143,6 +144,15 @@
       });
     }
 
+    // 根據ID是否有值自動更改save的文字說明
+    function autoSaveMode() {
+      if ($('#id').val()) {
+        $('#save').text('修改');
+      } else {
+        $('#save').text('新增');
+      }
+    }
+
     // 查詢
     $('#query').on('click', e => {
       query();
@@ -151,6 +161,7 @@
     // 清空
     $('#clean').on('click', e => {
       $('#form input').val('');
+      autoSaveMode();
     });
 
     // 新增/修改
@@ -164,6 +175,7 @@
       ).done((data, textStatus, jqXHR) => {
         $('#id').val(data.id);
         query();
+        autoSaveMode();
       });
     });
 
@@ -178,6 +190,7 @@
       ).done((data, textStatus, jqXHR) => {
         $('#form input').val('');
         query();
+        autoSaveMode();
       });
     });
   });
