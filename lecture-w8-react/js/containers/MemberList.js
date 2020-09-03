@@ -22,7 +22,15 @@ class MemberList extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({members: nextProps.members});
+
+    if (nextProps.members !== this.props.members) {
+      this.setState({members: nextProps.members});
+    }
+    //檢查是否有抓到訊息
+    if (!!nextProps.message) {
+      alert(nextProps.message);
+    }
+
   }
 
   handleChange(e) {
@@ -93,7 +101,8 @@ class MemberList extends React.Component{
 
 const mapStatusToProps = (status) => {
   return {
-    members: status.member.list
+    members: status.member.list,
+    message: status.member.message
   }
 };
 

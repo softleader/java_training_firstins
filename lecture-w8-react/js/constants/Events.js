@@ -3,4 +3,5 @@ export const MEMBER_EVENTS = {
   ADD: 'ADD',
   UPDATE: 'UPDATE',
   REMOVE: 'REMOVE',
+  CLEAR_MESSAGE: 'CLEAR_MESSAGE',
 };

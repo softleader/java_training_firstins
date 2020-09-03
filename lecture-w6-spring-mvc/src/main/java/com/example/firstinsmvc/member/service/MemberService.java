@@ -1,5 +1,7 @@
 package com.example.firstinsmvc.member.service;
 
+import com.example.firstinsmvc.common.Detail;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -34,7 +36,7 @@ public class MemberService {
 		final Long id = Objects.requireNonNull(member.getId(), "id is required");
 		// 因JPA Session的特性，建議不要使用非persistent狀態外的物件進行update
 		// 因此此處會從db撈，並將可以更改的欄位寫入後儲存
-		final Member dbMember = memberDao.findById(id).orElseThrow(() -> new RuntimeException("member not found, id:" + id));
+		final Member dbMember = memberDao.findById(id).orElseThrow(() -> new RuntimeException("data not found, id:" + id));
 		dbMember.setEmpNo(member.getEmpNo());
 		dbMember.setName(member.getName());
 		// 同上，因為JPA Session的特性，其實此處的save只有flush的作用
@@ -43,8 +45,18 @@ public class MemberService {
 
 	public void delete(Member member) {
 		final Long id = Objects.requireNonNull(member.getId(), "id is required");
-		final Member dbMember = memberDao.findById(id).orElseThrow(() -> new RuntimeException("member not found, id:" + id));
+		final Member dbMember = memberDao.findById(id).orElseThrow(() -> new RuntimeException("data not found, id:" + id));
 		memberDao.delete(dbMember);
 	}
 
+	public Detail validation (Member member) {
+		final Detail detail = new Detail();
+		final Member dbEntity = memberDao.findByEmpNo(member.getEmpNo());
+		//若已存在則設定錯誤代碼和訊息
+		if (dbEntity != null) {
+			detail.setMessage(String.format("time:%s, EmpNo Existed", LocalDateTime.now().toString()));
+			detail.setStatusCode("8003");
+		}
+		return detail;
+	}
 }
